@@ -37,7 +37,7 @@ Søk opp og fest utstyr på PC-en, og få det opp på telefonen når du går ut 
 docker compose up -d --build
 ```
 
-Appen kjører på port **5055**. SQLite-databasen persistes i Docker-volumet `njord-data`.
+Appen kjører på port **5088**. SQLite-databasen persistes i Docker-volumet `njord-data`.
 
 ### Filer som er endret
 
