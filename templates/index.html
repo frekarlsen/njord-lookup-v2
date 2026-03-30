@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Njord A â€“ Isoleringsliste</title>
+    <title>Njord A – Isoleringsliste</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -92,7 +92,7 @@
             z-index: 1;
         }
 
-        /* â”€â”€ Header â”€â”€ */
+        /* ── Header ── */
         .header {
             text-align: center;
             padding: 40px 0 32px;
@@ -157,7 +157,7 @@
         .header p { color: var(--text-secondary); font-size: 14px; }
 
 
-        /* â”€â”€ Mode Tabs â”€â”€ */
+        /* ── Mode Tabs ── */
         .search-tabs {
             display: flex;
             gap: 4px;
@@ -193,7 +193,7 @@
             border: 1px solid var(--border);
             box-shadow: 0 1px 4px rgba(0,0,0,0.15);
         }
-        /* â”€â”€ Switchboard card â”€â”€ */
+        /* ── Switchboard card ── */
         .sw-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -241,7 +241,7 @@
             gap: 10px;
         }
 
-        /* â”€â”€ Search â”€â”€ */
+        /* ── Search ── */
         .search-wrapper { position: relative; margin-bottom: 12px; }
 
         .search-icon {
@@ -300,7 +300,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* â”€â”€ Session / Share panel â”€â”€ */
+        /* ── Session / Share panel ── */
         .session-panel {
             display: none;
             margin-bottom: 20px;
@@ -518,7 +518,7 @@
         }
         .session-phone-badge.visible { display: inline-flex; }
 
-        /* â”€â”€ Pinned â”€â”€ */
+        /* ── Pinned ── */
         .pinned-section { margin-bottom: 20px; display: none; }
         .pinned-section.visible { display: block; }
 
@@ -595,7 +595,7 @@
 
         .btn-unpin:hover { color: var(--danger); }
 
-        /* â”€â”€ History â”€â”€ */
+        /* ── History ── */
         .history-section { margin-bottom: 20px; display: none; }
         .history-section.visible { display: block; }
 
@@ -623,7 +623,7 @@
 
         .history-chip:hover .remove-history { opacity: 1; }
 
-        /* â”€â”€ Results â”€â”€ */
+        /* ── Results ── */
         .results-meta {
             display: flex; align-items: center;
             justify-content: space-between;
@@ -752,7 +752,7 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* â”€â”€ Toast â”€â”€ */
+        /* ── Toast ── */
         .toast {
             position: fixed;
             bottom: 24px;
@@ -815,10 +815,10 @@
             </div>
             <div class="header-badge">
                 <span class="dot"></span>
-                Njord A â€” Isoleringsliste
+                Njord A — Isoleringsliste
             </div>
-            <h1>UtstyrssÃ¸k</h1>
-            <p>SÃ¸k etter TAG, utstyrsnavn eller tavlenummer</p>
+            <h1>Utstyrss&oslash;k</h1>
+            <p>S&oslash;k etter TAG, utstyrsnavn eller tavlenummer</p>
         </div>
 
         <!-- Mode Tabs -->
@@ -849,10 +849,10 @@
             <div class="search-actions">
                 <button class="btn-clear" id="btnClear">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    TÃ¸m
+                    T&oslash;m
                 </button>
             </div>
-            <div class="search-hint" id="searchHint">Skriv minst 2 tegn for Ã¥ sÃ¸ke</div>
+            <div class="search-hint" id="searchHint">Skriv minst 2 tegn for &aring; s&oslash;ke</div>
         </div>
 
         <!-- Session Panel -->
@@ -893,7 +893,7 @@
             <!-- When session is active -->
             <div class="session-active" id="sessionActive">
                 <div class="session-code-display">
-                    <div class="session-code-box" id="sessionCodeDisplay">â€”</div>
+                    <div class="session-code-box" id="sessionCodeDisplay">—</div>
                     <button class="btn-copy-code" id="btnCopyCode">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                         Kopier
@@ -910,7 +910,7 @@
                     <div class="session-qr-code" id="qrContainer"></div>
                     <div class="session-qr-hint">
                         <strong>Skann med telefonen</strong><br>
-                        Ã…pner appen direkte med festede utstyr synkronisert. Eller skriv inn koden manuelt.
+                        &Aring;pner appen direkte med festede utstyr synkronisert. Eller skriv inn koden manuelt.
                     </div>
                 </div>
             </div>
@@ -933,9 +933,9 @@
             <div class="section-header">
                 <span class="section-title" style="color: var(--text-muted);">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    Siste sÃ¸k
+                    Siste s&oslash;k
                 </span>
-                <button class="btn-section-action" id="btnClearHistory">TÃ¸m</button>
+                <button class="btn-section-action" id="btnClearHistory">T&oslash;m</button>
             </div>
             <div class="history-list" id="historyList"></div>
         </div>
@@ -949,31 +949,31 @@
 
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <p>SÃ¸ker...</p>
+            <p>S&oslash;ker...</p>
         </div>
 
         <div class="empty-state" id="emptyState">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 8h10M7 12h6"></path>
             </svg>
-            <p>SÃ¸k etter utstyrs-TAG for Ã¥ finne<br>tavle, plassering, felt og lÃ¥snummer</p>
+            <p>S&oslash;k etter utstyrs-TAG for &aring; finne<br>tavle, plassering, felt og l&aring;snummer</p>
         </div>
 
         <div class="stats-bar">
-            <span>OppfÃ¸ringer: <strong id="statTotal">â€”</strong></span>
-            <span>Tavler: <strong id="statTavler">â€”</strong></span>
+            <span>Oppf&oslash;ringer: <strong id="statTotal">—</strong></span>
+            <span>Tavler: <strong id="statTavler">—</strong></span>
         </div>
 
         <div class="footer">
             Njord A Isoleringsliste Lookup &middot; v2.0<br>
-            <span class="credit">Laget av Fredrik Karlsen â€” 2026</span>
+            <span class="credit">Laget av Fredrik Karlsen — 2026</span>
         </div>
     </div>
 
     <div class="toast" id="toast"></div>
 
     <script>
-        // â”€â”€ Elements â”€â”€
+        // ── Elements ──
         const searchInput = document.getElementById('searchInput');
         const resultsDiv = document.getElementById('results');
         const resultsMeta = document.getElementById('resultsMeta');
@@ -990,7 +990,7 @@
 
         let debounceTimer = null;
 
-        // â”€â”€ Theme â”€â”€
+        // ── Theme ──
         const savedTheme = localStorage.getItem('njord-theme') || 'dark';
         setTheme(savedTheme);
 
@@ -1006,7 +1006,7 @@
             document.getElementById('iconMoon').style.display = theme === 'light' ? 'block' : 'none';
         }
 
-        // â”€â”€ Toast â”€â”€
+        // ── Toast ──
         function showToast(msg, duration = 2500) {
             const t = document.getElementById('toast');
             t.textContent = msg;
@@ -1014,7 +1014,7 @@
             setTimeout(() => t.classList.remove('show'), duration);
         }
 
-        // â”€â”€ Pins (localStorage = per nettleser, persistent) â”€â”€
+        // ── Pins (localStorage = per nettleser, persistent) ──
         function getPins() {
             try { return JSON.parse(localStorage.getItem('njord-pins') || '[]'); }
             catch { return []; }
@@ -1057,13 +1057,13 @@
             pinnedCards.innerHTML = pins.map((item, i) => `
                 <div class="pinned-card">
                     <div class="pinned-info" onclick="searchFor('${escapeAttr(item.utstyr || item.tavle)}')">
-                        <div class="pinned-tag">${escapeHtml(item.utstyr || 'â€”')}</div>
+                        <div class="pinned-tag">${escapeHtml(item.utstyr || '—')}</div>
                         <div class="pinned-desc">${escapeHtml(item.navn || '')}</div>
                     </div>
                     <div class="pinned-location">
-                        <strong>${escapeHtml(item.plassering || 'â€”')}</strong>
+                        <strong>${escapeHtml(item.plassering || '—')}</strong>
                         ${escapeHtml(item.tavle)} &middot; Felt ${escapeHtml(item.felt)}<br>
-                        L&aring;s: ${escapeHtml(item.laas_nr || 'â€”')}
+                        L&aring;s: ${escapeHtml(item.laas_nr || '—')}
                     </div>
                     <button class="btn-unpin" onclick="unpinIndex(${i})" title="Fjern">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -1087,7 +1087,7 @@
             searchInput.focus();
         }
 
-        // â”€â”€ History (sessionStorage) â”€â”€
+        // ── History (sessionStorage) ──
         function getHistory() {
             try { return JSON.parse(sessionStorage.getItem('njord-history') || '[]'); }
             catch { return []; }
@@ -1131,13 +1131,13 @@
             renderHistory();
         });
 
-        // â”€â”€ Stats â”€â”€
+        // ── Stats ──
         fetch('/api/stats').then(r => r.json()).then(data => {
             document.getElementById('statTotal').textContent = data.total;
             document.getElementById('statTavler').textContent = data.tavler;
         });
 
-        // â”€â”€ Mode Tabs â”€â”€
+        // ── Mode Tabs ──
         let currentMode = 'utstyr';
         const tabUtstyr = document.getElementById('tabUtstyr');
         const tabTavler = document.getElementById('tabTavler');
@@ -1159,11 +1159,11 @@
                 resultsDiv.innerHTML = '';
                 resultsMeta.style.display = 'none';
                 emptyState.style.display = 'block';
-                searchHint.textContent = 'Skriv minst 2 tegn for Ã¥ sÃ¸ke';
+                searchHint.textContent = 'Skriv minst 2 tegn for \u00E5 s\u00F8ke';
             }
         }
 
-        // â”€â”€ Search â”€â”€
+        // ── Search ──
         searchInput.addEventListener('input', () => {
             clearTimeout(debounceTimer);
             const q = searchInput.value.trim();
@@ -1173,7 +1173,7 @@
                 resultsDiv.innerHTML = '';
                 resultsMeta.style.display = 'none';
                 emptyState.style.display = 'block';
-                searchHint.textContent = 'Skriv minst 2 tegn for Ã¥ sÃ¸ke';
+                searchHint.textContent = 'Skriv minst 2 tegn for \u00E5 s\u00F8ke';
                 return;
             }
 
@@ -1220,7 +1220,7 @@
                 }
             } catch(e) {
                 loading.classList.remove('active');
-                resultsDiv.innerHTML = '<div class="empty-state"><p>Feil ved sÃ¸k. PrÃ¸v igjen.</p></div>';
+                resultsDiv.innerHTML = '<div class="empty-state"><p>Feil ved s\u00F8k. Pr\u00F8v igjen.</p></div>';
             }
         }
 
@@ -1229,12 +1229,12 @@
             return '<div class="sw-card">' +
                 '<div class="sw-header">' +
                 '<span class="sw-tag">' + hl(item.tavle, query) + '</span>' +
-                '<span class="sw-voltage">' + escapeHtml(item.spenning || 'â€”') + '</span>' +
+                '<span class="sw-voltage">' + escapeHtml(item.spenning || '—') + '</span>' +
                 '</div>' +
                 desc +
                 '<div class="sw-grid">' +
-                '<div class="detail-item"><span class="label">OmrÃ¥de</span><span class="value highlight">' + hl(item.omr, query) + '</span></div>' +
-                '<div class="detail-item"><span class="label">Mating</span><span class="value">' + hl(item.mating || 'â€”', query) + '</span></div>' +
+                '<div class="detail-item"><span class="label">Omr\u00E5de</span><span class="value highlight">' + hl(item.omr, query) + '</span></div>' +
+                '<div class="detail-item"><span class="label">Mating</span><span class="value">' + hl(item.mating || '—', query) + '</span></div>' +
                 '</div></div>';
         }
 
@@ -1259,7 +1259,7 @@
             const extras = [];
             if (item.sikring) extras.push(`<span class="extra-tag"><span class="et-label">Sikring:</span> ${escapeHtml(item.sikring)}</span>`);
             if (item.kw) extras.push(`<span class="extra-tag"><span class="et-label">kW:</span> ${escapeHtml(item.kw)}</span>`);
-            if (item.last_strom) extras.push(`<span class="extra-tag"><span class="et-label">LaststrÃ¸m:</span> ${escapeHtml(item.last_strom)}</span>`);
+            if (item.last_strom) extras.push(`<span class="extra-tag"><span class="et-label">Laststr\u00F8m:</span> ${escapeHtml(item.last_strom)}</span>`);
             if (item.motorvarmer_tag) extras.push(`<span class="extra-tag"><span class="et-label">Motorvarmer:</span> ${escapeHtml(item.motorvarmer_tag)}</span>`);
             if (item.motorvarmer_fra) extras.push(`<span class="extra-tag"><span class="et-label">Matet fra:</span> ${escapeHtml(item.motorvarmer_fra)}</span>`);
 
@@ -1268,15 +1268,15 @@
             return `
                 <div class="result-card">
                     <div class="tag-line">
-                        <span class="tag">${hl(item.utstyr || 'â€”', query)}</span>
+                        <span class="tag">${hl(item.utstyr || '—', query)}</span>
                         <button class="btn-pin ${pinned ? 'pinned' : ''}" data-key="${escapeAttr(key)}" onclick='handlePin(${JSON.stringify(item).replace(/'/g,"&#39;")})'>${pinIcon}</button>
                     </div>
                     <div class="desc">${hl(item.navn || 'Ingen beskrivelse', query)}</div>
                     <div class="detail-grid">
                         <div class="detail-item"><span class="label">Tavle</span><span class="value">${hl(item.tavle, query)}</span></div>
-                        <div class="detail-item"><span class="label">Plassering</span><span class="value highlight">${escapeHtml(item.plassering || 'â€”')}</span></div>
-                        <div class="detail-item"><span class="label">Felt</span><span class="value">${escapeHtml(item.felt || 'â€”')}</span></div>
-                        <div class="detail-item"><span class="label">LÃ¥s nr.</span><span class="value">${escapeHtml(item.laas_nr || 'â€”')}</span></div>
+                        <div class="detail-item"><span class="label">Plassering</span><span class="value highlight">${escapeHtml(item.plassering || '—')}</span></div>
+                        <div class="detail-item"><span class="label">Felt</span><span class="value">${escapeHtml(item.felt || '—')}</span></div>
+                        <div class="detail-item"><span class="label">L\u00E5s nr.</span><span class="value">${escapeHtml(item.laas_nr || '—')}</span></div>
                     </div>
                     ${extraHtml}
                 </div>`;
@@ -1307,9 +1307,9 @@
             return (s||'').replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
 
-        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-        // â”€â”€ SESSION SHARING SYSTEM â”€â”€
-        // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        // ══════════════════════════════════════════
+        // ── SESSION SHARING SYSTEM ──
+        // ══════════════════════════════════════════
 
         let activeSession = null;   // current session code
         let pollTimer = null;
@@ -1511,7 +1511,7 @@
                     break;
                 case 'syncing':
                     syncDot.style.background = 'var(--accent)';
-                    syncText.textContent = 'Synkronisererâ€¦';
+                    syncText.textContent = 'Synkroniserer…';
                     break;
                 case 'updated':
                     syncDot.style.background = 'var(--success)';
@@ -1572,13 +1572,13 @@
             }
         }
 
-        // â”€â”€ Keyboard â”€â”€
+        // ── Keyboard ──
         document.addEventListener('keydown', (e) => {
             if (e.key === '/' && document.activeElement !== searchInput && document.activeElement !== joinCodeInput) { e.preventDefault(); searchInput.focus(); }
             if (e.key === 'Escape') { searchInput.value = ''; searchInput.dispatchEvent(new Event('input')); searchInput.blur(); }
         });
 
-        // â”€â”€ Init â”€â”€
+        // ── Init ──
         renderPins();
         renderHistory();
         checkUrlSession() || restoreSession();
