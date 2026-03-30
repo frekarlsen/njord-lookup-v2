@@ -34,7 +34,14 @@ Søk opp og fest utstyr på PC-en, og få det opp på telefonen når du går ut 
 ## Deployment
 
 ```bash
+# Klon repoet
+git clone https://github.com/frekarlsen/njord-lookup-v2.git
+cd njord-lookup
+
+# Bygg og start
 docker compose up -d --build
+
+# Appen kjører nå på http://<server-ip>:5088
 ```
 
 Appen kjører på port **5088**. SQLite-databasen persistes i Docker-volumet `njord-data`.
