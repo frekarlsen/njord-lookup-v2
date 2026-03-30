@@ -3,6 +3,7 @@ import json
 import os
 import sqlite3
 import random
+import re
 import time
 
 app = Flask(__name__)
@@ -93,11 +94,19 @@ def index():
     return resp
 
 
+def make_pattern(q):
+    """Konverter søkestreng til regex-mønster. * blir wildcard (matcher hva som helst)."""
+    parts = q.split('*')
+    return re.compile('.*'.join(re.escape(p) for p in parts))
+
+
 @app.route("/api/search")
 def search():
     q = request.args.get("q", "").strip().upper()
     if not q or len(q) < 2:
         return jsonify({"results": [], "query": q})
+
+    pattern = make_pattern(q)
 
     results = []
     for item in EQUIPMENT:
@@ -105,12 +114,12 @@ def search():
         navn = item.get("navn", "").upper()
         tavle = item.get("tavle", "").upper()
 
-        if q in utstyr or q in navn or q in tavle:
+        if pattern.search(utstyr) or pattern.search(navn) or pattern.search(tavle):
             results.append(item)
 
     results.sort(key=lambda x: (
         0 if x.get("utstyr", "").upper() == q else
-        1 if q in x.get("utstyr", "").upper() else 2
+        1 if pattern.search(x.get("utstyr", "").upper()) else 2
     ))
 
     return jsonify({"results": results[:50], "query": q, "total": len(results)})
@@ -122,17 +131,19 @@ def switchboards():
     if not q or len(q) < 2:
         return jsonify({"results": [], "query": q, "total": 0})
 
+    pattern = make_pattern(q)
+
     results = []
     for item in SWITCHBOARDS:
-        if (q in item.get("tavle", "").upper()
-                or q in item.get("omr", "").upper()
-                or q in item.get("beskrivelse", "").upper()
-                or q in item.get("mating", "").upper()):
+        if (pattern.search(item.get("tavle", "").upper())
+                or pattern.search(item.get("omr", "").upper())
+                or pattern.search(item.get("beskrivelse", "").upper())
+                or pattern.search(item.get("mating", "").upper())):
             results.append(item)
 
     results.sort(key=lambda x: (
         0 if x.get("tavle", "").upper() == q else
-        1 if q in x.get("tavle", "").upper() else 2
+        1 if pattern.search(x.get("tavle", "").upper()) else 2
     ))
 
     return jsonify({"results": results, "query": q, "total": len(results)})
