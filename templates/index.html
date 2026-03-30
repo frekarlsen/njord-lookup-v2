@@ -590,7 +590,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px; color: var(--text-muted);
             margin-top: 4px;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            line-height: 1.6;
         }
 
         .pinned-row2 span { color: var(--text-secondary); }
@@ -1161,7 +1161,7 @@
             tabUtstyr.classList.toggle('active', mode === 'utstyr');
             tabTavler.classList.toggle('active', mode === 'tavler');
             searchInput.placeholder = mode === 'tavler'
-                ? 'EH-82-0010'
+                ? 'F.eks. EH-82-0010'
                 : 'F.eks. EM-23-0009A';
             const q = searchInput.value.trim();
             if (q.length >= 2) {
