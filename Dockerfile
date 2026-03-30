@@ -7,14 +7,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Ensure data directory exists and equipment.json is placed correctly
+# Ensure data directory exists and json files are placed correctly
 RUN mkdir -p /app/data && \
-    cp /app/equipment.json /app/data/equipment.json 2>/dev/null || true
+    cp /app/equipment.json /app/data/equipment.json 2>/dev/null || true && \
+    cp /app/switchboards.json /app/data/switchboards.json 2>/dev/null || true
 
-# Entrypoint script to handle volume mount (equipment.json might not be in volume yet)
+# Entrypoint script to handle volume mount (json files might not be in volume yet)
 RUN echo '#!/bin/sh\n\
 if [ ! -f /app/data/equipment.json ]; then\n\
   cp /app/equipment.json /app/data/equipment.json 2>/dev/null || true\n\
+fi\n\
+if [ ! -f /app/data/switchboards.json ]; then\n\
+  cp /app/switchboards.json /app/data/switchboards.json 2>/dev/null || true\n\
 fi\n\
 exec "$@"' > /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
