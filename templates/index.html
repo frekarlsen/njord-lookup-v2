@@ -575,8 +575,7 @@
 
         .pinned-desc {
             font-size: 12px; color: var(--text-secondary);
-            white-space: nowrap; overflow: hidden;
-            text-overflow: ellipsis; margin-top: 2px;
+            margin-top: 2px; line-height: 1.4;
         }
 
         .pinned-location {
@@ -816,7 +815,7 @@
             </div>
             <div class="header-badge">
                 <span class="dot"></span>
-                Njord A — Isoleringsliste
+                Njord A &mdash; ELEKTRO
             </div>
             <h1>Utstyrss&oslash;k</h1>
             <p>S&oslash;k etter TAG, utstyrsnavn eller tavlenummer</p>
@@ -966,7 +965,7 @@
         </div>
 
         <div class="footer">
-            Njord A Isoleringsliste Lookup &middot; v2.0<br>
+            Njord A Elektro Lookup &middot; v2.0<br>
             <span class="credit">Laget av Fredrik Karlsen — 2026</span>
         </div>
     </div>
@@ -992,7 +991,7 @@
         let debounceTimer = null;
 
         // ── Theme ──
-        const savedTheme = localStorage.getItem('njord-theme') || 'dark';
+        const savedTheme = localStorage.getItem('njord-theme') || 'light';
         setTheme(savedTheme);
 
         document.getElementById('themeToggle').addEventListener('click', () => {
@@ -1151,7 +1150,7 @@
             tabUtstyr.classList.toggle('active', mode === 'utstyr');
             tabTavler.classList.toggle('active', mode === 'tavler');
             searchInput.placeholder = mode === 'tavler'
-                ? 'F.eks. EH-82-0010 eller C32'
+                ? 'EH-82-0010'
                 : 'F.eks. EM-23-0009A';
             const q = searchInput.value.trim();
             if (q.length >= 2) {
