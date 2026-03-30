@@ -1,0 +1,450 @@
+[
+  {
+    "tavle": "EL-80-0001A",
+    "omr": "M11",
+    "spenning": "11kV",
+    "beskrivelse": "",
+    "mating": "HKA"
+  },
+  {
+    "tavle": "EL-80-0001B",
+    "omr": "M11",
+    "spenning": "11kV",
+    "beskrivelse": "",
+    "mating": "HKB"
+  },
+  {
+    "tavle": "EL-18-0401",
+    "omr": "C14",
+    "spenning": "6.6kV",
+    "beskrivelse": "LER C14 - Fenja",
+    "mating": "EL-80-0001A +22"
+  },
+  {
+    "tavle": "EN-82-0001A",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Utility",
+    "mating": "EL-80-0001A +08"
+  },
+  {
+    "tavle": "EN-82-0001B",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Utility",
+    "mating": "EL-80-0001B +09"
+  },
+  {
+    "tavle": "EN-84-0001A",
+    "omr": "C22",
+    "spenning": "690V",
+    "beskrivelse": "Nødtavle",
+    "mating": "EG-84-0001"
+  },
+  {
+    "tavle": "EN-84-0001B",
+    "omr": "C22",
+    "spenning": "690V",
+    "beskrivelse": "Nødtavle",
+    "mating": "EL-80-0001A +14"
+  },
+  {
+    "tavle": "EN-82-0002A",
+    "omr": "C33E",
+    "spenning": "690V",
+    "beskrivelse": "Prosess",
+    "mating": "EL-80-0001A +20"
+  },
+  {
+    "tavle": "EN-82-0002B",
+    "omr": "C32",
+    "spenning": "690V",
+    "beskrivelse": "Prosess",
+    "mating": "EL-80-0001B +07"
+  },
+  {
+    "tavle": "EN-82-0003",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Drilling",
+    "mating": "EL-80-0001A +06"
+  },
+  {
+    "tavle": "EN-82-0004",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Drilling SCR",
+    "mating": "EL-80-0001 +10 & +11"
+  },
+  {
+    "tavle": "EN-82-0010A",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Gen.Aux.",
+    "mating": "EN-84-0001A +27"
+  },
+  {
+    "tavle": "EN-82-0010B",
+    "omr": "M12",
+    "spenning": "690V",
+    "beskrivelse": "Gen.Aux.",
+    "mating": "EN-82-0001B +14"
+  },
+  {
+    "tavle": "EN-82-0020",
+    "omr": "L14",
+    "spenning": "690V",
+    "beskrivelse": "LQ 4. etg.",
+    "mating": "EN-82-0001A +23G1L2ae"
+  },
+  {
+    "tavle": "EN-71-0001A",
+    "omr": "C11",
+    "spenning": "690V",
+    "beskrivelse": "Brannvann",
+    "mating": "EN-84-0001B +33"
+  },
+  {
+    "tavle": "EN-71-0001B",
+    "omr": "C21",
+    "spenning": "690V",
+    "beskrivelse": "Brannvann",
+    "mating": "EN-84-0001B +04"
+  },
+  {
+    "tavle": "EN-71-0006",
+    "omr": "C22B",
+    "spenning": "690V",
+    "beskrivelse": "Tilf. skum skid",
+    "mating": "Se overall single line"
+  },
+  {
+    "tavle": "EH-82-0003",
+    "omr": "C81",
+    "spenning": "400/230V",
+    "beskrivelse": "Kjølecontainer",
+    "mating": "EH-82-0101"
+  },
+  {
+    "tavle": "EH-82-0010",
+    "omr": "M12",
+    "spenning": "400/230V",
+    "beskrivelse": "Utility",
+    "mating": "EN-82-0001A +05M1R2ae"
+  },
+  {
+    "tavle": "EH-82-0011",
+    "omr": "C32",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EN-82-0002B +20"
+  },
+  {
+    "tavle": "EH-82-0012",
+    "omr": "L13",
+    "spenning": "400/230V",
+    "beskrivelse": "LQ",
+    "mating": "EN-82-0001B +16M1R2ae"
+  },
+  {
+    "tavle": "EH-82-0101",
+    "omr": "C12",
+    "spenning": "400/230V",
+    "beskrivelse": "Utility",
+    "mating": "EH820010.01"
+  },
+  {
+    "tavle": "EH-82-0102",
+    "omr": "C22",
+    "spenning": "400/230V",
+    "beskrivelse": "Utility",
+    "mating": "EH820010.02"
+  },
+  {
+    "tavle": "EH-82-0104",
+    "omr": "C42",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH820011.01"
+  },
+  {
+    "tavle": "EH-82-0105",
+    "omr": "M11",
+    "spenning": "400/230V",
+    "beskrivelse": "Mek. Verksted",
+    "mating": "EH820010.05"
+  },
+  {
+    "tavle": "EH-82-0107",
+    "omr": "L11",
+    "spenning": "400/230V",
+    "beskrivelse": "LQ 1. etg",
+    "mating": "EH820012.70"
+  },
+  {
+    "tavle": "EH-82-0108",
+    "omr": "L12",
+    "spenning": "400/230V",
+    "beskrivelse": "LQ 2. etg",
+    "mating": "EH820012.72"
+  },
+  {
+    "tavle": "EH-82-0110",
+    "omr": "L11",
+    "spenning": "400/230V",
+    "beskrivelse": "LQ kjøkken",
+    "mating": "EH820012.71"
+  },
+  {
+    "tavle": "EH-82-0111",
+    "omr": "D11",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH820011.02"
+  },
+  {
+    "tavle": "EH-82-0112",
+    "omr": "D11",
+    "spenning": "400/230V",
+    "beskrivelse": "Drilling",
+    "mating": "EH820011.02"
+  },
+  {
+    "tavle": "EH-82-0113",
+    "omr": "P11S",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH820011.04"
+  },
+  {
+    "tavle": "EH-82-0114",
+    "omr": "P11S",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH820011.03"
+  },
+  {
+    "tavle": "EH-82-0115",
+    "omr": "P11N",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH820011.27"
+  },
+  {
+    "tavle": "EH-82-0116",
+    "omr": "D50",
+    "spenning": "400/230V",
+    "beskrivelse": "v/ Drawwork",
+    "mating": "EH820011.05"
+  },
+  {
+    "tavle": "EH-82-0117",
+    "omr": "C33B",
+    "spenning": "400/230V",
+    "beskrivelse": "LER C33B",
+    "mating": "EH820010.03"
+  },
+  {
+    "tavle": "EH-82-0130",
+    "omr": "C60",
+    "spenning": "400/230V",
+    "beskrivelse": "ROV Container",
+    "mating": "EH820010.07 & .08"
+  },
+  {
+    "tavle": "EH-84-0010",
+    "omr": "C22",
+    "spenning": "400/230V",
+    "beskrivelse": "LER",
+    "mating": "EN-84-0001A +15"
+  },
+  {
+    "tavle": "EH-84-0101",
+    "omr": "C12",
+    "spenning": "400/230V",
+    "beskrivelse": "",
+    "mating": "EH840010.01"
+  },
+  {
+    "tavle": "EH-84-0103",
+    "omr": "C32",
+    "spenning": "400/230V",
+    "beskrivelse": "",
+    "mating": "EH840010.02"
+  },
+  {
+    "tavle": "EH-84-0104",
+    "omr": "C42",
+    "spenning": "400/230V",
+    "beskrivelse": "",
+    "mating": "EH840010.03"
+  },
+  {
+    "tavle": "EH-84-0105",
+    "omr": "M12",
+    "spenning": "400/230V",
+    "beskrivelse": "LER",
+    "mating": "EH840010.04"
+  },
+  {
+    "tavle": "EH-84-0107",
+    "omr": "L12",
+    "spenning": "400/230V",
+    "beskrivelse": "",
+    "mating": "EH840010.06"
+  },
+  {
+    "tavle": "EH-84-0111",
+    "omr": "D11M",
+    "spenning": "400/230V",
+    "beskrivelse": "Over HPU K.rom",
+    "mating": "EH840010.07"
+  },
+  {
+    "tavle": "EH-84-0113",
+    "omr": "P11S",
+    "spenning": "400/230V",
+    "beskrivelse": "Prosess",
+    "mating": "EH840010.08"
+  },
+  {
+    "tavle": "EH-85-0010A",
+    "omr": "C22",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "ER-85-0001A"
+  },
+  {
+    "tavle": "EH-85-0010B",
+    "omr": "C22",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "ER-85-0001B"
+  },
+  {
+    "tavle": "EH-85-0011A",
+    "omr": "C22B",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "ER-85-0001A"
+  },
+  {
+    "tavle": "EH-85-0011B",
+    "omr": "C22B",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "ER-85-0001B"
+  },
+  {
+    "tavle": "EH-85-0020",
+    "omr": "C22",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "ER-85-0002"
+  },
+  {
+    "tavle": "EH-85-0101A",
+    "omr": "M12",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850010A.301"
+  },
+  {
+    "tavle": "EH-85-0101B",
+    "omr": "M12",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850010B.301"
+  },
+  {
+    "tavle": "EH-85-0102A",
+    "omr": "M12",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850010A.302"
+  },
+  {
+    "tavle": "EH-85-0102B",
+    "omr": "M12",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850010B.302"
+  },
+  {
+    "tavle": "EH-85-0103A",
+    "omr": "C41",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "EH850010A.303"
+  },
+  {
+    "tavle": "EH-85-0103B",
+    "omr": "C41",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "EH850010B.303"
+  },
+  {
+    "tavle": "EH-85-0104A",
+    "omr": "D41",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "EH850010A.304"
+  },
+  {
+    "tavle": "EH-85-0104B",
+    "omr": "D41",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "EH850010B.304"
+  },
+  {
+    "tavle": "EH-85-0105A",
+    "omr": "C21B",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850011A.01 & .02"
+  },
+  {
+    "tavle": "EH-85-0105B",
+    "omr": "C21B",
+    "spenning": "230V",
+    "beskrivelse": "LIR",
+    "mating": "EH850011B.01 & .02"
+  },
+  {
+    "tavle": "EH-85-0201",
+    "omr": "M12",
+    "spenning": "230V",
+    "beskrivelse": "LER",
+    "mating": "EH850020.301"
+  },
+  {
+    "tavle": "EH-85-0203",
+    "omr": "L14",
+    "spenning": "230V",
+    "beskrivelse": "",
+    "mating": "EH850020.303"
+  },
+  {
+    "tavle": "ER-85-0001A",
+    "omr": "C22B",
+    "spenning": "230V",
+    "beskrivelse": "Instrument UPS",
+    "mating": "EN-84-0001B +12"
+  },
+  {
+    "tavle": "ER-85-0001B",
+    "omr": "C22B",
+    "spenning": "230V",
+    "beskrivelse": "Instrument UPS",
+    "mating": "EN-84-0001A +13"
+  },
+  {
+    "tavle": "ER-85-0002",
+    "omr": "C22",
+    "spenning": "230V",
+    "beskrivelse": "Lys UPS",
+    "mating": "EN-84-0001A +09"
+  }
+]
