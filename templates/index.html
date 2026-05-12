@@ -796,30 +796,65 @@
             .session-qr { flex-direction: column; align-items: flex-start; }
         }
 
-        /* ── Edit / CRUD ── */
+        /* ══ Redigeringsmodus ══ */
+
+        /* Rediger-knapp i header */
+        .edit-mode-toggle {
+            display: flex; align-items: center; gap: 6px;
+            padding: 0 12px; height: 36px; border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary);
+            cursor: pointer; font-size: 12px; font-weight: 600;
+            font-family: 'IBM Plex Sans', sans-serif;
+            letter-spacing: 0.03em; transition: all 0.2s;
+        }
+        .edit-mode-toggle svg { width: 14px; height: 14px; }
+        .edit-mode-toggle:hover { border-color: var(--accent); color: var(--accent); }
+        .edit-mode-toggle.active {
+            background: var(--accent); color: white;
+            border-color: var(--accent);
+        }
+
+        /* Banner */
+        .edit-banner {
+            display: none;
+            align-items: center; gap: 8px;
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 8px; padding: 9px 14px; margin-bottom: 14px;
+            font-size: 13px; color: var(--accent); font-weight: 500;
+        }
+        .edit-banner svg { width: 14px; height: 14px; flex-shrink: 0; }
+        body.edit-mode .edit-banner { display: flex; }
+
+        /* Rediger-knapp på hvert kort — skjult normalt */
         .card-edit-btn {
-            display: flex; align-items: center; gap: 5px;
+            display: none;
+            align-items: center; justify-content: center; gap: 5px;
             margin-top: 10px; padding: 6px 12px;
-            border-radius: 6px; border: 1px solid var(--border);
+            width: 100%; border-radius: 6px;
+            border: 1px solid var(--border);
             background: var(--bg-secondary); color: var(--text-secondary);
             font-size: 12px; font-weight: 500; cursor: pointer;
-            transition: all 0.15s; width: 100%; justify-content: center;
+            transition: all 0.15s;
         }
+        body.edit-mode .card-edit-btn { display: flex; }
+        .card-edit-btn svg { width: 13px; height: 13px; }
         .card-edit-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
-        .card-edit-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
 
+        /* FAB — skjult normalt */
         .fab-add {
+            display: none;
             position: fixed; bottom: 24px; right: 24px;
             width: 52px; height: 52px; border-radius: 50%;
-            background: var(--accent); color: white;
-            border: none; cursor: pointer;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-            display: flex; align-items: center; justify-content: center;
+            background: var(--accent); color: white; border: none;
+            cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            align-items: center; justify-content: center;
             transition: transform 0.15s; z-index: 500;
         }
+        body.edit-mode .fab-add { display: flex; }
         .fab-add:hover { transform: scale(1.08); }
 
-        /* ── Modal ── */
+        /* Modal */
         .modal-overlay {
             display: none; position: fixed; inset: 0; z-index: 900;
             background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
@@ -848,15 +883,12 @@
         .mf input:focus { outline: none; border-color: var(--accent); }
         .mf input.mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
         .mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .modal-actions {
-            display: flex; gap: 8px; margin-top: 20px; align-items: center;
-        }
+        .modal-actions { display: flex; gap: 8px; margin-top: 20px; align-items: center; }
         .btn-mcancel {
             padding: 8px 16px; border-radius: 7px; border: 1px solid var(--border);
             background: transparent; color: var(--text-secondary); cursor: pointer;
             font-size: 14px; font-family: 'IBM Plex Sans', sans-serif;
         }
-        .btn-mcancel:hover { border-color: var(--text-muted); }
         .btn-msave {
             padding: 8px 18px; border-radius: 7px; border: none;
             background: var(--accent); color: white; cursor: pointer;
@@ -876,6 +908,13 @@
     <div class="container">
         <div class="header">
             <div class="header-actions">
+                <button class="edit-mode-toggle" id="editModeToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Rediger
+                </button>
                 <button class="share-toggle" id="shareToggle" title="Del utstyrsliste">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
@@ -902,6 +941,15 @@
             </div>
             <h1>Utstyrss&oslash;k</h1>
             <p>S&oslash;k etter TAG, utstyrsnavn eller tavlenummer</p>
+        </div>
+
+        <!-- Redigeringsmodus-banner -->
+        <div class="edit-banner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            Redigeringsmodus — rediger, slett eller legg til utstyr og tavler
         </div>
 
         <!-- Mode Tabs -->
@@ -1674,15 +1722,30 @@
 
 
         // ══════════════════════════════════════════
-        // ── CRUD ──
+        // ── REDIGERINGSMODUS ──
         // ══════════════════════════════════════════
 
-        let _editCtx = null; // { type, id, item }
-
+        let editModeActive = false;
         window._eqCache = [];
         window._swCache = [];
 
-        // Lookup helpers called from card buttons
+        const editModeToggle = document.getElementById('editModeToggle');
+
+        editModeToggle.addEventListener('click', () => {
+            editModeActive = !editModeActive;
+            document.body.classList.toggle('edit-mode', editModeActive);
+            editModeToggle.classList.toggle('active', editModeActive);
+            editModeToggle.innerHTML = editModeActive
+                ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg> Avslutt redigering'
+                : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Rediger';
+        });
+
+        // FAB — bruker currentMode (den globale variabelen fra tab-systemet)
+        document.getElementById('fabAdd').addEventListener('click', () => {
+            openModal(currentMode === 'tavler' ? 'switchboard' : 'equipment', null, null);
+        });
+
+        // Lookup fra cache (kalles fra data-attributt på knapper)
         window.editEqById = function(idStr) {
             const id = parseInt(idStr, 10);
             const item = (_eqCache || []).find(i => i._id === id);
@@ -1694,12 +1757,8 @@
             if (item) openModal('switchboard', id, item);
         };
 
-        // FAB: add new
-        document.getElementById('fabAdd').addEventListener('click', () => {
-            const type = document.getElementById('tabTavler').classList.contains('active')
-                ? 'switchboard' : 'equipment';
-            openModal(type, null, null);
-        });
+        // ── Modal ──
+        let _editCtx = null;
 
         function openModal(type, id, item) {
             _editCtx = { type, id, item };
@@ -1711,7 +1770,7 @@
                 type === 'equipment' ? eqFields(item || {}) : swFields(item || {});
             document.getElementById('btnDelete').style.display = id !== null ? 'block' : 'none';
             document.getElementById('editModal').classList.add('open');
-            document.getElementById('editModal').querySelector('input')?.focus();
+            setTimeout(() => document.getElementById('editModal').querySelector('input')?.focus(), 60);
         }
 
         function closeModal() {
@@ -1723,28 +1782,29 @@
             if (e.target === this) closeModal();
         });
 
-        function f(id, label, val, mono) {
+        // ── Skjemafelt ──
+        function mf(id, label, val, mono) {
             return '<div class="mf"><label>' + label + '</label>' +
                 '<input type="text" id="mf_' + id + '" value="' + escapeAttr(val || '') + '"' +
                 (mono ? ' class="mono"' : '') + ' placeholder="' + label + '"></div>';
         }
-        function frow(inner) { return '<div class="mf-row">' + inner + '</div>'; }
+        function mfrow(a, b) { return '<div class="mf-row">' + a + b + '</div>'; }
 
         function eqFields(item) {
-            return f('utstyr','TAG / Utstyrsnummer', item.utstyr, true) +
-                f('navn','Navn / Beskrivelse', item.navn, false) +
-                f('tavle','Tavle', item.tavle, true) +
-                frow(f('felt','Felt', item.felt, true) + f('plassering','Plassering', item.plassering, false)) +
-                frow(f('laas_nr','Låsenummer', item.laas_nr, true) + f('sikring','Sikring', item.sikring, false)) +
-                frow(f('kw','kW', item.kw, false) + f('last_strom','Laststøm', item.last_strom, false)) +
-                frow(f('motorvarmer_tag','Motorvarmer TAG', item.motorvarmer_tag, true) + f('mf_fra','Motorvarmer fra', item.motorvarmer_fra, true));
+            return mf('utstyr', 'TAG / Utstyrsnummer', item.utstyr, true) +
+                mf('navn', 'Navn / Beskrivelse', item.navn, false) +
+                mf('tavle', 'Tavle', item.tavle, true) +
+                mfrow(mf('felt', 'Felt', item.felt, true), mf('plassering', 'Plassering', item.plassering, false)) +
+                mfrow(mf('laas_nr', 'Låsenummer', item.laas_nr, true), mf('sikring', 'Sikring', item.sikring, false)) +
+                mfrow(mf('kw', 'kW', item.kw, false), mf('last_strom', 'Laststøm', item.last_strom, false)) +
+                mfrow(mf('motorvarmer_tag', 'Motorvarmer TAG', item.motorvarmer_tag, true), mf('motorvarmer_fra', 'Motorvarmer fra', item.motorvarmer_fra, true));
         }
 
         function swFields(item) {
-            return f('tavle','Tavle / ID', item.tavle, true) +
-                f('beskrivelse','Beskrivelse', item.beskrivelse, false) +
-                frow(f('omr','Område', item.omr, false) + f('spenning','Spenning', item.spenning, false)) +
-                f('mating','Mating (fra)', item.mating, true);
+            return mf('tavle', 'Tavle / ID', item.tavle, true) +
+                mf('beskrivelse', 'Beskrivelse', item.beskrivelse, false) +
+                mfrow(mf('omr', 'Område', item.omr, false), mf('spenning', 'Spenning', item.spenning, false)) +
+                mf('mating', 'Mating (fra)', item.mating, true);
         }
 
         function getVal(id) { return (document.getElementById('mf_' + id)?.value || '').trim(); }
@@ -1755,7 +1815,7 @@
                 felt: getVal('felt'), plassering: getVal('plassering'),
                 laas_nr: getVal('laas_nr'), sikring: getVal('sikring'),
                 kw: getVal('kw'), last_strom: getVal('last_strom'),
-                motorvarmer_tag: getVal('motorvarmer_tag'), motorvarmer_fra: getVal('mf_fra'),
+                motorvarmer_tag: getVal('motorvarmer_tag'), motorvarmer_fra: getVal('motorvarmer_fra'),
             };
         }
 
@@ -1771,9 +1831,8 @@
             const { type, id } = _editCtx;
             const isEq = type === 'equipment';
             const body = isEq ? getEqData() : getSwData();
-            const url = id === null
-                ? (isEq ? '/api/equipment' : '/api/switchboards')
-                : (isEq ? '/api/equipment/' + id : '/api/switchboards/' + id);
+            const base = isEq ? '/api/equipment' : '/api/switchboards';
+            const url = id === null ? base : base + '/' + id;
             const method = id === null ? 'POST' : 'PUT';
             try {
                 const res = await fetch(url, {
@@ -1796,10 +1855,10 @@
             const { type, id, item } = _editCtx;
             const navn = type === 'equipment'
                 ? (item.utstyr || item.navn || 'dette') : (item.tavle || 'denne');
-            if (!confirm('Slett "' + navn + '"?')) return;
-            const url = type === 'equipment' ? '/api/equipment/' + id : '/api/switchboards/' + id;
+            if (!confirm('Slett "' + navn + '"? Dette kan ikke angres.')) return;
+            const base = type === 'equipment' ? '/api/equipment' : '/api/switchboards';
             try {
-                const res = await fetch(url, { method: 'DELETE' });
+                const res = await fetch(base + '/' + id, { method: 'DELETE' });
                 if (res.ok) {
                     closeModal();
                     showToast('Slettet ✓');
@@ -1817,7 +1876,7 @@
         checkUrlSession() || restoreSession();
     </script>
 
-    <!-- Legg til ny -->
+    <!-- FAB: Legg til ny -->
     <button class="fab-add" id="fabAdd" title="Legg til ny">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -1825,7 +1884,7 @@
         </svg>
     </button>
 
-    <!-- Edit / Add modal -->
+    <!-- Edit/Add modal -->
     <div class="modal-overlay" id="editModal">
         <div class="modal">
             <h2 id="modalTitle">Rediger</h2>
