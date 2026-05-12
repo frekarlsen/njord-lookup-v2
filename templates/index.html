@@ -95,10 +95,23 @@
         /* ── Header ── */
         .header {
             display: flex;
+            flex-direction: column;
+            padding: 24px 0 20px;
+            gap: 12px;
+        }
+
+        /* Rad 1: badge sentrert */
+        .header-top {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Rad 2: tittel venstre, knapper høyre */
+        .header-bottom {
+            display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            padding: 28px 0 24px;
         }
 
         .header-text {
@@ -796,7 +809,7 @@
             .header h1 { font-size: 18px; }
             .result-card .detail-grid { grid-template-columns: 1fr; }
             .container { padding: 12px; }
-            .header { padding: 20px 0 16px; gap: 8px; }
+            .header { padding: 16px 0 12px; gap: 8px; }
             .pinned-card { gap: 8px; }
             .session-code-box { font-size: 18px; padding: 8px 14px; }
             .session-qr { flex-direction: column; align-items: flex-start; }
@@ -933,6 +946,19 @@
 <body>
     <div class="container">
         <div class="header">
+            <!-- Rad 1: badge sentrert -->
+            <div class="header-top">
+                <div class="header-badge">
+                    <span class="dot"></span>
+                    Njord A &mdash; ELEKTRO
+                </div>
+            </div>
+            <!-- Rad 2: tittel + knapper -->
+            <div class="header-bottom">
+            <div class="header-text">
+                <h1>Utstyrss&oslash;k</h1>
+                <p>S&oslash;k etter TAG, utstyrsnavn eller tavle</p>
+            </div>
             <div class="header-actions">
                 <button class="edit-mode-toggle" id="editModeToggle">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -961,14 +987,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="header-text">
-                <div class="header-badge">
-                    <span class="dot"></span>
-                    Njord A &mdash; ELEKTRO
-                </div>
-                <h1>Utstyrs&shy;s&oslash;k</h1>
-                <p>S&oslash;k etter TAG, utstyrsnavn eller tavle</p>
-            </div>
+            </div><!-- /header-bottom -->
         </div>
 
         <!-- Redigeringsmodus-banner -->
@@ -1974,7 +1993,7 @@
                 resultsDiv.innerHTML = '';
                 emptyState.style.display = 'none';
                 searchHint.style.display = 'block';
-                document.getElementById('resultsHeader').style.display = 'none';
+                resultsMeta.style.display = 'none';
                 return;
             }
 
@@ -1992,10 +2011,9 @@
                 const data = await res.json();
                 loading.classList.remove('active');
 
-                const rh = document.getElementById('resultsHeader');
-                rh.style.display = 'flex';
-                document.getElementById('resultsCount').textContent = data.total + ' treff';
-                document.getElementById('resultsQuery').textContent = 'alle';
+                resultsMeta.style.display = 'flex';
+                resultsCount.textContent = data.total + ' treff';
+                resultsQuery.textContent = 'alle';
 
                 if (currentMode === 'tavler') {
                     window._swCache = data.results;
