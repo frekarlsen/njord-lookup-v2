@@ -158,6 +158,19 @@ def stats():
     })
 
 
+
+
+@app.route("/api/all/equipment")
+def all_equipment():
+    items = [{"_id": i, **item} for i, item in enumerate(EQUIPMENT)]
+    return jsonify({"results": items, "total": len(items)})
+
+
+@app.route("/api/all/switchboards")
+def all_switchboards():
+    items = [{"_id": i, **item} for i, item in enumerate(SWITCHBOARDS)]
+    return jsonify({"results": items, "total": len(items)})
+
 # ── Equipment CRUD ──
 
 @app.route("/api/equipment", methods=["POST"])
