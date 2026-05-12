@@ -1101,6 +1101,28 @@
         </div>
     </div>
 
+
+    <!-- FAB: Legg til ny -->
+    <button class="fab-add" id="fabAdd" title="Legg til ny">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+    </button>
+
+    <!-- Edit/Add modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <h2 id="modalTitle">Rediger</h2>
+            <div class="modal-fields" id="modalFields"></div>
+            <div class="modal-actions">
+                <button class="btn-mdelete" id="btnDelete" onclick="handleDelete()" style="display:none">Slett</button>
+                <button class="btn-mcancel" onclick="closeModal()">Avbryt</button>
+                <button class="btn-msave" onclick="handleSave()">Lagre</button>
+            </div>
+        </div>
+    </div>
+
     <div class="toast" id="toast"></div>
 
     <script>
@@ -1875,27 +1897,6 @@
         renderHistory();
         checkUrlSession() || restoreSession();
     </script>
-
-    <!-- FAB: Legg til ny -->
-    <button class="fab-add" id="fabAdd" title="Legg til ny">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-        </svg>
-    </button>
-
-    <!-- Edit/Add modal -->
-    <div class="modal-overlay" id="editModal">
-        <div class="modal">
-            <h2 id="modalTitle">Rediger</h2>
-            <div class="modal-fields" id="modalFields"></div>
-            <div class="modal-actions">
-                <button class="btn-mdelete" id="btnDelete" onclick="handleDelete()" style="display:none">Slett</button>
-                <button class="btn-mcancel" onclick="closeModal()">Avbryt</button>
-                <button class="btn-msave" onclick="handleSave()">Lagre</button>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>
